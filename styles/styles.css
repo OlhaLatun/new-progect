@@ -1,6 +1,10 @@
 body {
-	color: green;
+  color: blueviolet;
 }
+
 p {
-	color: initial;
+  color: initial;
+  border: rgb(13, 190, 222) 5px solid;
+  padding: 5px;
+  width: 400px;
 }
