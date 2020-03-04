@@ -1,13 +1,3 @@
-// function lightIsOn() {
-//   const bulb = document.getElementsByClassName("fas fa-lightbulb")[0];
-//   bulb.style.color = "yellow";
-
-//   const text = document.getElementsByTagName("h1")[0];
-//   text.innerHTML = "Bulb is: ON";
-//   text.style.color = "black";
-
-//   const background = document.getElementsByTagName("body")[0];
-//   background.style.backgroundColor = "white";
 function lightIsOn() {
   const bulb = document.getElementsByClassName("fas fa-lightbulb")[0];
   const input = document.getElementsByName("setColor")[0];
@@ -18,6 +8,13 @@ function lightIsOn() {
     value = "yellow";
   }
   bulb.style.color = value;
+
+  const text = document.getElementsByTagName("h1")[0];
+  text.innerHTML = "Bulb is: ON";
+  text.style.color = "black";
+
+  const background = document.getElementsByTagName("body")[0];
+  background.style.backgroundColor = "white";
 }
 function lightIsOff() {
   const bulb = document.getElementsByClassName("fas fa-lightbulb")[0];
