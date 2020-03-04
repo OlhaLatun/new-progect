@@ -4,20 +4,24 @@ body {
 h1 {
   text-align: center;
   color: white;
-  font-size: 60px;
+  font-size: 30px;
 }
 i.fas {
-  font-size: 300px;
+  font-size: 400px;
   color: black;
   margin: 20px;
 }
 button {
   background-color: yellow;
-  padding: 10px;
+  padding: 5px;
   font-variant: small-caps;
   font-size: 20px;
   text-transform: uppercase;
   border: 2px solid black;
+}
+input {
+  margin: 5px;
+  padding-right: 100px;
 }
 section {
   text-align: center;
