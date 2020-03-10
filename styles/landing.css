@@ -1,0 +1,76 @@
+.icon-container img {
+  width: 80px;
+  display: block;
+  margin: auto;
+}
+
+.main-img {
+  border-radius: 50%;
+}
+.d-flex h3 {
+  text-transform: uppercase;
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+.carousel-container .list-group-item {
+  background-color: rgba(0, 255, 255, 0.295);
+}
+
+.carousel-container h5 {
+  background-color: rgba(0, 255, 255, 0.495);
+  color: black;
+  opacity: 0, 5;
+  text-transform: uppercase;
+}
+
+.carousel-container .carousel-caption {
+  padding: 0px;
+}
+
+.icon-container .card {
+  border: none;
+}
+
+.footer .card {
+  border: none;
+  background: none;
+}
+
+.pool {
+  height: 70vh;
+  position: relative;
+}
+
+.pool::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  opacity: 0.4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("../assets/landing/water.png") center center fixed no-repeat;
+}
+
+.footer {
+  height: 200px;
+}
+
+.footer i {
+  vertical-align: middle;
+  margin-right: 20px;
+  font-size: 60px;
+  color: aqua;
+}
+
+.footer p {
+  margin-bottom: 0px;
+}
+
+.footer .col-md-4 {
+  margin-top: 5%;
+}
