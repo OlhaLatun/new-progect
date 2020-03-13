@@ -40,7 +40,7 @@
 }
 
 .pool {
-  height: 70vh;
+  height: 50vh;
   position: relative;
 }
 
@@ -57,18 +57,14 @@
 }
 
 .footer {
-  height: 200px;
+  height: 30vh;
 }
 
 .footer i {
   vertical-align: middle;
-  margin-right: 20px;
-  font-size: 60px;
+  margin-right: 3vw;
+  font-size: 5vh;
   color: aqua;
-}
-
-.footer p {
-  margin-bottom: 0px;
 }
 
 .footer .col-md-4 {
