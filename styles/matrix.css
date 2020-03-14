@@ -1,0 +1,68 @@
+html,
+body,
+.container-fluid {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container-fluid > .row > .col-md-6 {
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  height: 50vh;
+}
+
+.heading {
+  border-bottom: 1px solid gray;
+}
+
+.container-fluid ul {
+  list-style-type: none;
+}
+
+ul .fa-trash {
+  display: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover > .fa-trash {
+  display: inline;
+  color: #ff5722;
+}
+
+.doneList li {
+  text-decoration: line-through;
+}
+
+#importantUrgent {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+#importantUrgent > .heading {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+#importantNotUrgent {
+  background-color: rgba(0, 128, 0, 0.4);
+}
+#importantNotUrgent > .heading {
+  background-color: rgba(0, 128, 0, 0.7);
+}
+
+#notImportantUrgent {
+  background-color: rgba(255, 255, 0, 0.4);
+}
+#notImportantUrgent > .heading {
+  background-color: rgba(255, 255, 0, 0.7);
+}
+
+#notImportantNotUrgent {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+#notImportantNotUrgent > .heading {
+  background-color: rgba(128, 128, 128, 0.7);
+}
