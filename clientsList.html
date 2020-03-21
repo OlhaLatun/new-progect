@@ -26,13 +26,33 @@
             aria-label="Search"
             onkeyup="filterClients()"
           />
-          <!-- <button
-            class="btn btn-outline-success mr-2 my-sm-0"
-            type="button"
-            onclick="filterClients()"
-          >
-            Filter
-          </button> -->
+          <div class="btn-group mr-1">
+            <button
+              id="filterButton"
+              type="button"
+              class="btn btn-success dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              FILTER
+            </button>
+            <div class="dropdown-menu">
+              <a
+                class="dropdown-item"
+                href="#"
+                onmouseover="filterByGender('male')"
+                >Male</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onmouseover="filterByGender('female')"
+              >
+                Female</a
+              >
+            </div>
+          </div>
           <button
             type="button"
             class="btn btn-secondary mr-1"

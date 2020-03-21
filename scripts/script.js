@@ -77,11 +77,25 @@ function filterClients() {
       );
     });
     refreshData(filteredClients);
-    filteredClients.length === 0 ? showNotFoundSection() : showClientsList();
+    showCorrectSection(filteredClients);
   } else {
     refreshData(clients);
     showClientsList();
   }
+}
+function showCorrectSection(filteredClients) {
+  if (filteredClients.length === 0) {
+    document.querySelector(".notFound").style.display = "block";
+    document.querySelector("#clientsData").style.display = "none";
+  } else {
+    document.querySelector(".notFound").style.display = "none";
+    document.querySelector("#clientsData").style.display = "block";
+  }
+}
+
+function showClientsList() {
+  document.querySelector(".notFound").style.display = "none";
+  document.querySelector("#clientsData").style.display = "block";
 }
 
 function getTotalAmount(clientsList = clients) {
@@ -97,12 +111,13 @@ function removeCurrencyFromAmount(amount) {
   return Number(amount.slice(1));
 }
 
-function showNotFoundSection() {
-  document.querySelector(".notFound").style.display = "block";
-  document.querySelector("#clientsData").style.display = "none";
-}
-
-function showClientsList() {
-  document.querySelector(".notFound").style.display = "none";
-  document.querySelector("#clientsData").style.display = "block";
+function filterByGender(sex) {
+  const filteredList = clients.filter(client => {
+    if (sex == "male") {
+      return (client.gender = "Male");
+    } else {
+      return (client.gender = "Female");
+    }
+  });
+  refreshData(filteredList);
 }
