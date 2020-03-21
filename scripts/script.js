@@ -1,29 +1,108 @@
-function lightIsOn() {
-  const bulb = document.getElementsByClassName("fas fa-lightbulb")[0];
-  const input = document.getElementsByName("setColor")[0];
-  let value;
-  if (input.value) {
-    value = input.value;
-  } else {
-    value = "yellow";
-  }
-  bulb.style.color = value;
-
-  const text = document.getElementsByTagName("h1")[0];
-  text.innerHTML = "Bulb is: ON";
-  text.style.color = "black";
-
-  const background = document.getElementsByTagName("body")[0];
-  background.style.backgroundColor = "white";
+function displayData(clientsList = clients) {
+  const ul = document.querySelector("#clientsData");
+  clientsList.forEach(client => {
+    ul.appendChild(getElement(client));
+  });
+  getTotalAmount(clientsList);
 }
-function lightIsOff() {
-  const bulb = document.getElementsByClassName("fas fa-lightbulb")[0];
-  bulb.style.color = "black";
 
-  const text = document.getElementsByTagName("h1")[0];
-  text.innerHTML = "Bulb is: OFF";
-  text.style.color = "white";
+function getElement(client) {
+  const newLi = document.createElement("li");
+  const avatar = document.createElement("img");
+  newLi.className = "media";
+  avatar.className = "mr-3 align-self-senter";
+  avatar.setAttribute("src", client.avatar);
+  newLi.appendChild(avatar);
+  newLi.appendChild(getClientDescription(client));
+  return newLi;
+}
 
-  const background = document.getElementsByTagName("body")[0];
-  background.style.backgroundColor = "grey";
+function getClientDescription(client) {
+  const div = document.createElement("div");
+  div.className = "media-body";
+  const emailLink = document.createElement("a");
+  emailLink.setAttribute("href", `mailto:${client.mail}`);
+  emailLink.innerHTML = client.email;
+
+  const textPart1 = document.createTextNode(
+    `${client.lastName} ${client.firstName} `
+  );
+  const textPart2 = document.createTextNode(
+    ` ${client.gender},  ${client.date}, ${client.amount}`
+  );
+
+  div.appendChild(textPart1);
+  div.appendChild(emailLink);
+  div.appendChild(textPart2);
+
+  return div;
+}
+
+function sortData(order) {
+  const sortedClients = clients.sort((lastClient, nextClient) => {
+    if (order == "ascending") {
+      return lastClient.lastName > nextClient.lastName ? 1 : -1;
+    } else {
+      return lastClient.lastName < nextClient.lastName ? 1 : -1;
+    }
+  });
+  refreshData(sortedClients);
+}
+
+function refreshData(updatedClients) {
+  clearList();
+  displayData(updatedClients);
+}
+
+function clearList() {
+  $("ul").empty();
+  // const ul = document.querySelector("#clientsData");
+  //   while (ul.firstChild) {
+  //     ul.removeСhild(ul.firstChild);
+  // }
+}
+
+function filterClients() {
+  const filterString = document
+    .querySelector("#filterInput")
+    .value.toLowerCase()
+    .trim();
+  console.log(filterString);
+  if (filterString) {
+    const filteredClients = clients.filter(client => {
+      return (
+        client.firstName.toLowerCase().includes(filterString) ||
+        client.lastName.toLowerCase().includes(filterString) ||
+        client.email.toLowerCase().includes(filterString)
+      );
+    });
+    refreshData(filteredClients);
+    filteredClients.length === 0 ? showNotFoundSection() : showClientsList();
+  } else {
+    refreshData(clients);
+    showClientsList();
+  }
+}
+
+function getTotalAmount(clientsList = clients) {
+  const total = clientsList.reduce((amount, client) => {
+    return amount + removeCurrencyFromAmount(client.amount);
+  }, 0);
+  document.querySelectorAll(".totalAmountContainer").forEach(element => {
+    element.innerHTML = total.toFixed(2);
+  });
+}
+
+function removeCurrencyFromAmount(amount) {
+  return Number(amount.slice(1));
+}
+
+function showNotFoundSection() {
+  document.querySelector(".notFound").style.display = "block";
+  document.querySelector("#clientsData").style.display = "none";
+}
+
+function showClientsList() {
+  document.querySelector(".notFound").style.display = "none";
+  document.querySelector("#clientsData").style.display = "block";
 }

@@ -1,28 +1,13 @@
-body {
-  background-color: grey;
+#clientsData {
+  padding-left: 0;
 }
-h1 {
-  text-align: center;
-  color: white;
-  font-size: 30px;
-}
-i.fas {
-  font-size: 400px;
-  color: black;
-  margin: 20px;
-}
-button {
-  background-color: yellow;
+
+#clientsData li {
   padding: 5px;
-  font-variant: small-caps;
-  font-size: 20px;
-  text-transform: uppercase;
-  border: 2px solid black;
+  border: 1px solid gray;
+  margin: 15px;
 }
-input {
-  margin: 5px;
-  padding-right: 100px;
-}
-section {
-  text-align: center;
+
+.notFound {
+  display: none;
 }
