@@ -114,9 +114,9 @@ function removeCurrencyFromAmount(amount) {
 function filterByGender(sex) {
   const filteredList = clients.filter(client => {
     if (sex == "male") {
-      return (client.gender = "Male");
+      return client.gender == "Male";
     } else {
-      return (client.gender = "Female");
+      return client.gender == "Female";
     }
   });
   refreshData(filteredList);
