@@ -62,6 +62,17 @@ function clearList() {
   // }
 }
 
+function filterByGender(sex) {
+  const filteredList = clients.filter(client => {
+    if (sex == "male") {
+      return client.gender == "Male";
+    } else {
+      return client.gender == "Female";
+    }
+  });
+  refreshData(filteredList);
+}
+
 function filterClients() {
   const filterString = document
     .querySelector("#filterInput")
@@ -109,15 +120,4 @@ function getTotalAmount(clientsList = clients) {
 
 function removeCurrencyFromAmount(amount) {
   return Number(amount.slice(1));
-}
-
-function filterByGender(sex) {
-  const filteredList = clients.filter(client => {
-    if (sex == "male") {
-      return client.gender == "Male";
-    } else {
-      return client.gender == "Female";
-    }
-  });
-  refreshData(filteredList);
 }
