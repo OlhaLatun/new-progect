@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bulb project</title>
-    <link rel="stylesheet" type="text/css" href="styles/index.css" />
-    <script type="text/javascript" src="scripts/script.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>FlexBox test</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <h1>Bulb is: OFF</h1>
-    <section>
-      <i class="fas fa-lightbulb"></i>
-      <br />
-      <input name="setColor" type="text" value="Yellow" />
-      <br />
-      <button onclick="lightIsOn()">Turn on</button>
-      <button onclick="lightIsOff()">Turn off</button>
+     <ul class="navbar">
+       <li><a href="#">Home</a></li>
+       <li><a href="#">Gallery</a></li>
+       <li><a href="#">Contact us</a></li>
+       <li><a href="#">About</a></li>
+     </ul>
+    <section id="container">
+      <ul class="flex-container first-row">
+        <li><img src="assets/gallery/1.jpg" alt="photo1">
+        <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/2.jpg" alt="photo2">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/3.jpg" alt="photo3">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/4.jpg" alt="photo4">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/5.jpg" alt="photo5">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/6.jpg" alt="photo6">
+          <span>Brugge, Belgium</span></li>
+      </ul>
+      <ul class="flex-container second-row">
+        <li><img src="assets/gallery/7.jpeg" alt="photo7">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/8.jpg" alt="photo8">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/9.jpg" alt="photo9">
+          <span>Brugge, Belgium</span></li>
+        <li><img src="assets/gallery/10.jpg" alt="photo10">
+          <span>Brugge, Belgium</span></li>
+         <li><img src="assets/gallery/11.jpg" alt="photo11">
+          <span>Brugge, Belgium</span></li>
+      </ul>
     </section>
   </body>
 </html>
