@@ -29,6 +29,7 @@ ul.flex-container li img {
   height: 100%;
   object-fit: cover;
 }
+
 ul.flex-container li {
   position: relative;
 }
@@ -82,13 +83,14 @@ ul.navbar a:hover {
 background-color: rgb(71, 71, 21);
 }
 
-/* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
+
 ul.first-row li {
   width: 350px;
   flex-grow: 1;
 }
+
 ul.navbar {
   flex-direction: column;
   padding: 0; 
@@ -103,7 +105,6 @@ ul.navbar li {
 ul.navbar li:last-of-type a {
   border-bottom: none;
 }
-
 }
 
 
