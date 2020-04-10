@@ -1,0 +1,49 @@
+
+body {
+    display: flex;
+    flex-grow: 1;
+}
+
+.input {
+    flex-grow: 1;
+    margin-left: 10px;
+    position: relative;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+}
+
+#container {
+    border: 1px solid black;
+    position: relative;
+    width: 50%;
+    flex-grow: 4;
+    text-align: center;
+   
+}
+
+.class1  {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 5px;
+}
+
+.class2  {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 5px;
+}
+
+.class3  {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 5px;
+}
+
+.class4  {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 5px;
+}
